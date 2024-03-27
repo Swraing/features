@@ -1,21 +1,17 @@
 {
-  "image": "ghcr.io/tianocore/containers/fedora-39-dev:latest",
-  "features": {
-    "ghcr.io/devcontainers/features/desktop-lite:1": {}
-  },
-  "postCreateCommand": "git config --global --add safe.directory * && pip install --upgrade -r pip-requirements.txt",
-  "forwardPorts": [5000],
-  "privileged": true,
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "DavidAnson.vscode-markdownlint",
-        "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-        "ms-vscode.cpptools",
-        "walonli.edk2-vscode",
-        "zachflower.uncrustify"
-      ]
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-18",
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {}
+    },
+    "postCreateCommand": "npm install -g @devcontainers/cli",
+    "hostRequirements": {
+        "cpus": 4
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mads-hartmann.bash-ide-vscode"
+            ]
+        }
     }
-  }
 }
